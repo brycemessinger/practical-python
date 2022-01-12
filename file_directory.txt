@@ -1,0 +1,21 @@
+Create a Tax Calculator Script			== tax_calculator
+
+Strings, Input, and Output			== lists_and_loops
+
+Create an Age Calculator			== age_calculator
+
+Rock Paper Scissors Game			== rock_paper_scissors
+		
+Sum Expenses					== expenses
+
+Loan Payment Calculator				== loan
+
+Create a Movie Schedule Dictionary		== movie_schedule
+
+Parse a Nested Contracts Dictionary		== contacts
+
+Use the Open Weather Map API			== weather
+
+Create a Dice Rolling Game			== dice_roll_game
+		
+Add Functions to Weather.py			== weather

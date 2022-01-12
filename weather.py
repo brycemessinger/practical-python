@@ -1,31 +1,24 @@
-temperature = 70
-forecast = "rain"
+import requests
 
-if not forecast == "rain":
-     print("Go outside!")
-else:
-    print("Stay inside!")
+def get_weather_desc_and_temp():
 
-# if temperature < 80 and forecast != "rain":
-#     print("Go Outside!")
-# else:
-#     print("Stay Inside!")
+    api_key = "da0646beb9ebeea29f4a2f744e453dda"
+    city = "Orlando"
+    url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+api_key+"&units=imperial"
 
-# if temperature > 80 or temperature < 60:
-#     print("Stay inside!")
-# else:
-#     print("Enjoy the outdoors!")
+    request = requests.get(url)
+    json = request.json()
+    # print(json)
 
+    description = json.get("weather") [0].get("description")
+    temp_min = json.get("main").get("temp_min")
+    temp_max = json.get("main").get("temp_max")
 
-# if temperature > 80:
-#     print("It's too hot!")
-#     print("Stay inside!")
-# elif temperature < 60:
-#     print("It's too cold!")
-#     print("Stay inside!")
-# else:
-#     print("Enjoy the outdoors")
+    return{'description': description,
+            'temp_min': temp_min,
+            'temp_max': temp_max}
 
-
-
-print("Have a good day!")
+weather_dict = get_weather_desc_and_temp()
+print("Today's forecast is", weather_dict.get('description'))
+print("The minimum temperature is", weather_dict.get('temp_min'))
+print("The maximum temperature is", weather_dict.get('temp_max'))
